@@ -19,7 +19,7 @@
 
 - include: openshift_hosted_registry.yml
 
-- include: cockpit-ui.yml
+- include: openshift_hosted_registry_console.yml
 
 - include: install_docker_gc.yml
   when:
