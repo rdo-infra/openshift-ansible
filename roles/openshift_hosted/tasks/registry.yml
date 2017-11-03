@@ -94,7 +94,6 @@
       docker-registry: default
     session_affinity: ClientIP
     service_type: ClusterIP
-    clusterip: '{{ openshift_hosted_registry_clusterip | default(omit) }}'
 
 - include: secure.yml
   static: no
@@ -116,7 +115,7 @@
       type: persistentVolumeClaim
       claim_name: "{{ openshift.hosted.registry.storage.volume.name }}-claim"
   when:
-  - openshift.hosted.registry.storage.kind | default(none) in ['nfs', 'openstack', 'glusterfs']
+  - openshift.hosted.registry.storage.kind | default(none) in ['nfs', 'openstack', 'glusterfs', 'hostpath']
 
 - include: storage/glusterfs_endpoints.yml
   when:
@@ -151,6 +150,10 @@
 - include: storage/glusterfs.yml
   when:
   - openshift.hosted.registry.storage.kind | default(none) == 'glusterfs' or openshift.hosted.registry.storage.glusterfs.swap
+
+- include: storage/hostpath.yml
+  when:
+  - openshift.hosted.registry.storage.kind | default(none) == 'hostpath'
 
 - name: Delete temp directory
   file:

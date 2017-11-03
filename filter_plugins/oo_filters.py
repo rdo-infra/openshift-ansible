@@ -853,6 +853,25 @@ def oo_component_persistent_volumes(hostvars, groups, component, subcomponent=No
                                     path=path,
                                     readOnly=read_only)))
 
+                    elif kind == 'hostpath':
+                        volume = params['volume']['name']
+                        size = params['volume']['size']
+                        if 'labels' in params:
+                            labels = params['labels']
+                        else:
+                            labels = dict()
+                        access_modes = params['access']['modes']
+                        path = params['hostpath']['path']
+                        persistent_volume = dict(
+                            name="{0}-volume".format(volume),
+                            capacity=size,
+                            labels=labels,
+                            access_modes=access_modes,
+                            storage=dict(
+                                hostPath=dict(
+                                    path=path,
+                                )))
+
                     elif not (kind == 'object' or kind == 'dynamic'):
                         msg = "|failed invalid storage kind '{0}' for component '{1}'".format(
                             kind,
