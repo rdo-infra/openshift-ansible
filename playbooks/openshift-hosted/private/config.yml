@@ -27,7 +27,7 @@
 
 - import_playbook: openshift_hosted_registry_storage.yml
 
-- import_playbook: cockpit-ui.yml
+- import_playbook: openshift_hosted_registry_console.yml
 
 - import_playbook: install_docker_gc.yml
 
