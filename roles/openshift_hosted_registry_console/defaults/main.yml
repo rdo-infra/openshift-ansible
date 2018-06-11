@@ -1,0 +1,7 @@
+---
+openshift_config_base: "/etc/origin"
+openshift_hosted_registry_console_namespace: default
+openshift_hosted_registry_console_cert_expire_days: 730
+openshift_hosted_registry_console_routehost: False
+openshift_hosted_registry_console_routecertificates: {}
+openshift_hosted_registry_console_routetermination: passthrough

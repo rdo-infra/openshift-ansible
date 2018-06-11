@@ -1,8 +1,8 @@
 ---
-- name: Create Hosted Resources - cockpit-ui
+- name: Create Hosted Resources - openshift_hosted_registry_console
   hosts: oo_first_master
   roles:
-  - role: cockpit-ui
+  - role: openshift_hosted_registry_console
     when:
     - openshift_hosted_manage_registry | default(true) | bool
     - openshift_hosted_manage_registry_console | default(true) | bool
