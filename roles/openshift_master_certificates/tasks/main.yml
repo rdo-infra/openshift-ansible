@@ -81,8 +81,8 @@
       {% endfor %}
       --client-dir={{ openshift_generated_configs_dir }}/master-{{ hostvars[item].openshift.common.hostname }}
       --groups=system:masters,system:openshift-master
-      --master={{ hostvars[item].openshift.master.loopback_api_url }}
-      --public-master={{ hostvars[item].openshift.master.loopback_api_url }}
+      --master={{ openshift.master.api_url }}
+      --public-master={{ openshift.master.public_api_url }}
       --signer-cert={{ openshift_ca_cert }}
       --signer-key={{ openshift_ca_key }}
       --signer-serial={{ openshift_ca_serial }}
