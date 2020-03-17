@@ -9,7 +9,7 @@
 %global __requires_exclude ^/usr/bin/ansible-playbook$
 
 Name:           openshift-ansible
-Version:        3.11.161
+Version:        3.11.188
 Release:        1%{?dist}
 Summary:        Openshift and Atomic Enterprise Ansible
 License:        ASL 2.0
@@ -190,6 +190,113 @@ BuildArch:     noarch
 %{_datadir}/ansible/%{name}/test
 
 %changelog
+* Thu Mar 12 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.188-1
+- 
+
+* Sun Mar 08 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.187-1
+- 
+
+* Sat Mar 07 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.186-1
+- 
+
+* Fri Mar 06 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.185-1
+- Adding Prometheus 0.23.2 (madorn@gmail.com)
+
+* Thu Mar 05 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.184-1
+- 
+
+* Wed Mar 04 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.183-1
+- 
+
+* Tue Mar 03 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.182-1
+- 
+
+* Mon Mar 02 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.181-1
+- 
+
+* Sun Mar 01 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.180-1
+- 
+
+* Sat Feb 29 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.179-1
+- 
+
+* Fri Feb 28 2020 AOS Automation Release Team <noreply@redhat.com> 3.11.178-1
+- 
+
+* Thu Feb 27 2020 AOS Automation Release Team <aos-team-art <noreply@redhat.com>> 3.11.177-1
+- 
+
+* Wed Feb 26 2020 AOS Automation Release Team <aos-team-art <noreply@redhat.com>> 3.11.176-1
+- Delete container.yaml (lmeyer@redhat.com)
+- add any_errors_fatal (jcallen@redhat.com)
+- set openshift_certificate_expiry_warning_days to 6 months vs 365 days
+  (jcallen@redhat.com)
+- Certificate expiration misses node certificates (jcallen@redhat.com)
+
+* Tue Feb 25 2020 AOS Automation Release Team <aos-team-art <noreply@redhat.com>> 3.11.175-1
+- 
+
+* Mon Feb 24 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.174-1
+- 
+
+* Sun Feb 23 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.173-1
+- 
+
+* Sat Feb 22 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.172-1
+- 
+
+* Fri Feb 21 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.171-1
+- roles/openshift_cluster_monitoring_operator: configure retention
+  (sergiusz.urbaniak@gmail.com)
+- Fix cluster monitoring operator config map with etcd (spasquie@redhat.com)
+- gluster: fix how lvm wrapper is passed to heketi templates
+  (jmulligan@redhat.com)
+- Remove variable from logging task name (rteague@redhat.com)
+- Use Ansible 2.9.4 for testing (rteague@redhat.com)
+- [KIECLOUD-317] - Update RHPAM and RHDM templates and imagestreams on
+  OpenShift Service Catalog for release 7.6.0 (fspolti@redhat.com)
+
+* Mon Feb 03 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.170-1
+- 
+
+* Sun Feb 02 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.169-1
+- 
+
+* Sat Feb 01 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.168-1
+- 
+
+* Fri Jan 31 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.167-1
+- 
+
+* Thu Jan 30 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.166-1
+- Fix to rename ovirt_vms to ovirt_vm (bward@redhat.com)
+- Update owners for monitoring components (spasquie@redhat.com)
+- Support monitoring of etcd with cluster monitoring operator
+  (spasquie@redhat.com)
+- metrics_server: add nodes resource to aggregated-metrics-reader
+  (sergiusz.urbaniak@gmail.com)
+- roles/openshift_storage_glusterfs/OWNERS add nixpanic (sdodson@redhat.com)
+- update roles/openshift_storage_glusterfs/OWNERS (sdodson@redhat.com)
+- gluster: set HEKETI_LVMWRAPPER during the initial heketi deployment
+  (ndevos@redhat.com)
+- gluster: Heketi template does not contain LVM-wrapper on containerized
+  deployment (ndevos@redhat.com)
+
+* Thu Jan 16 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.165-1
+- 
+
+* Wed Jan 15 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.164-1
+- 
+
+* Tue Jan 14 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.163-1
+- 
+
+* Mon Jan 13 2020 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.162-1
+- [Bug 1744900] Bump up etcd release to 3.2.26 (skolicha@redhat.com)
+- gluster: do not enable hostPID for glusterfs-server pods (ndevos@redhat.com)
+- Cockpit should initialize before OpenShift SDN for avoid saving unexpected
+  iptables rules (bysnupy@hotmail.com)
+
 * Tue Dec 24 2019 AOS Automation Release Team <aos-team-art@redhat.com> 3.11.161-1
 - 
 
