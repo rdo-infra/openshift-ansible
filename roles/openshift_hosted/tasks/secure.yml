@@ -13,6 +13,8 @@
     namespace: default
     state: list
   register: docker_registry_route
+  # NOTE (dmsimard): Otherwise leaks certificate information, including private key
+  no_log: true
 
 - name: Retrieve registry service for the clusterip
   oc_service:
