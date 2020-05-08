@@ -36,3 +36,5 @@
     key_path: "/etc/origin/master/named_certificates/{{ openshift_hosted_registry_routecertificates['keyfile'] | basename }}"
     cacert_path: "/etc/origin/master/named_certificates/{{ openshift_hosted_registry_routecertificates['cafile'] | basename }}"
     dest_cacert_path: "/etc/origin/master/ca.crt"
+  # NOTE (dmsimard): Otherwise leaks certificate information, including private key
+  no_log: true
